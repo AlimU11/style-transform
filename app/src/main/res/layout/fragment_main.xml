@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light"
+    tools:context=".FragmentMain">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardViewConstraint"
+                android:elevation="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.45"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/selector_background"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageSelected"
+                    app:shapeAppearanceOverlay="@style/roundedImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:background="@drawable/selector_background_mask"/>
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ic_add_box"
+                    android:foregroundGravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/dark" />
+
+                <TextView
+                    android:id="@+id/textViewSelect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/select_new_image"
+                    android:textAlignment="center"
+                    android:textColor="@color/dark"
+                    android:textSize="25sp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/stylesViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.35"
+            app:layout_constraintBottom_toTopOf="@+id/buttonProcess"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewConstraint"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:paddingBottom="15dp"
+            android:paddingHorizontal="75dp"
+            android:clipToPadding="false"
+            android:clipChildren="false">
+        </androidx.viewpager2.widget.ViewPager2>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonProcess"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.09"
+            android:layout_marginBottom="35dp"
+
+            android:paddingHorizontal="63dp"
+            android:paddingVertical="10dp"
+            android:text="@string/process"
+            android:textSize="10pt"
+            android:textColor="@color/light"
+            app:background="@drawable/selector_button_style"
+            app:cornerRadius="12dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/addButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_add"
+            android:layout_marginEnd="75dp"
+            app:layout_constraintEnd_toEndOf="@+id/stylesViewPager"
+            app:layout_constraintTop_toTopOf="@+id/stylesViewPager"
+            android:background="@drawable/roundcorner"
+            android:elevation="12dp"
+            android:tint="@color/teal_700"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/dark"
+    tools:context=".FragmentImage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/imageFullScreen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:src="@tools:sample/avatars" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewBack"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="12dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:cardBackgroundColor="#00000000"
+            android:foreground="@drawable/card_background_black"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:id="@+id/imageViewBack"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_arrow_back"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                app:backgroundTint="@color/light"
+                app:layout_constraintEnd_toStartOf="@id/cardViewSave"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardViewConstraintResult" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+</FrameLayout>
